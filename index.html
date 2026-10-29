@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="claude:viewport-fit-sides" content="cover">
-<title>관계 애착 테스트</title>
+<title>인간관계 애착 테스트</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
@@ -189,7 +189,7 @@ footer em{display:block;font:italic 13px var(--latin);color:var(--faint);margin-
     <p>four ways of holding close</p>
     <div class="grid" id="grid"></div>
   </section>
-  <footer>나를 이해하는 만큼, 관계도 조금 더 편안해져요.<em>— the closer we know ourselves</em></footer>
+  <footer>나를 이해하는 만큼, 인간관계도 조금 더 편안해져요.<em>— the closer we know ourselves</em></footer>
 </div>
 
 <script>
@@ -277,7 +277,7 @@ function renderStart(){
   document.getElementById("all").hidden = true;
   app.innerHTML = `<div class="start fade">
     <span class="tag">THE WAY WE CONNECT</span>
-    <h1>관계 앞에서,<br>나는 <strong>어떤 모습</strong>일까.</h1>
+    <h1>인간관계 앞에서,<br>나는 <strong>어떤 모습</strong>일까.</h1>
     <svg class="art" viewBox="0 0 200 118" aria-hidden="true">
       <defs>
         <radialGradient id="ga" cx=".35" cy=".35"><stop offset="0" stop-color="#e3e9dc"/><stop offset="1" stop-color="#e3e9dc" stop-opacity="0"/></radialGradient>
@@ -289,7 +289,7 @@ function renderStart(){
       <circle cx="100" cy="59" r="3.2" fill="#8c4e56"/>
     </svg>
     <div class="parade">${ORDER.map(k=>`<span>${dotOf(k)}${TYPES[k].kind}</span>`).join("")}</div>
-    <p>가까워지고 싶은 마음, 나를 지키고 싶은 마음.<br>열두 개의 질문으로 관계 속 나의 모습을 만나보세요.</p>
+    <p>가까워지고 싶은 마음, 나를 지키고 싶은 마음.<br>열두 개의 질문으로 인간관계 속 나의 모습을 만나보세요.</p>
     <button class="btn" id="go">내 마음 들여다보기 <span aria-hidden="true">↗</span></button>
     <span class="meta"><b>12</b> 개의 질문 &nbsp;·&nbsp; 약 <b>2</b>분, 나를 위한 시간</span>
   </div>`;
@@ -345,7 +345,7 @@ function renderResult(key){
       </div></div>` : "";
   app.innerHTML = `<div class="result fade" style="--tc:${t.bar}">
     <div class="hero">
-      <span class="tag">${mine?"나의 관계 애착 유형은":"마음의 네 가지 모습"}</span>
+      <span class="tag">${mine?"나의 인간관계 애착 유형은":"마음의 네 가지 모습"}</span>
       <div class="result-line" aria-hidden="true"></div>
       <h2>${t.kind}</h2>
       <p class="lead">${t.lead}</p>
@@ -354,7 +354,7 @@ function renderResult(key){
     ${indexBox}
     <p class="desc">${t.desc}</p>
     <div class="box"><h3>${num()}이런 모습, 나만 그런 거 아니죠?</h3><ul>${t.signs.map(x=>`<li>${x}</li>`).join("")}</ul></div>
-    <div class="box tip"><h3>${num()}더 편안한 관계를 위한 팁</h3><ul>${t.tips.map(x=>`<li>${x}</li>`).join("")}</ul></div>
+    <div class="box tip"><h3>${num()}더 편안한 인간관계를 위한 팁</h3><ul>${t.tips.map(x=>`<li>${x}</li>`).join("")}</ul></div>
     <div class="match">
       <div class="mcard good"><small>편안함을 나누는 관계</small><strong>${dotOf(t.good)}${TYPES[t.good].kind}</strong><span>${t.goodWhy}</span></div>
       <div class="mcard bad"><small>이해가 더 필요한 관계</small><strong>${dotOf(t.bad)}${TYPES[t.bad].kind}</strong><span>${t.badWhy}</span></div>
@@ -369,7 +369,7 @@ function renderResult(key){
   document.getElementById("again").onclick = renderStart;
   const sh = document.getElementById("share");
   if(sh) sh.onclick = ()=>{
-    const txt = `나의 관계 애착 유형은 [${t.kind}]!\n${t.lead}\n불안 지수 ${ap}% · 회피 지수 ${vp}%\n${t.chips.join(" ")}`;
+    const txt = `나의 인간관계 애착 유형은 [${t.kind}]!\n${t.lead}\n불안 지수 ${ap}% · 회피 지수 ${vp}%\n${t.chips.join(" ")}`;
     const toast = document.getElementById("toast");
     const fail = ()=>toast.textContent="복사가 안 돼요. 화면을 캡처해서 공유해 주세요.";
     try{ navigator.clipboard.writeText(txt).then(()=>toast.textContent="복사됐어요! 친구에게 붙여넣어 보세요.").catch(fail); }catch(e){ fail(); }
